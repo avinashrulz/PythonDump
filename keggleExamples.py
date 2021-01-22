@@ -61,13 +61,22 @@ def StringManipulation():
     print("Hello {0}, this is awesome experience on the {1}th day of the year!!! {1} is a good number, {0} is even better!!!".format(test, decimal_no))
 
 def WorkingWithDictionaries():
-    numbers = {"One": 1, "two": 213221, "three": 3}
+    numbers = {"one": 1, "two": 213221, "three": 3}
     print (numbers["two"])
     numbers["eleven"] = 123
     print (numbers["eleven"])
     numbers["two"] = 1234
     print (numbers["eleven"])
     print(numbers)
+    planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune']
+    planets_initial = {planet: planet[0:3] for planet in planets}
+    print(planets_initial)
+    join_all = ' '.join(planets_initial.values())
+    print(join_all)
+    for k in numbers:
+        print("{} = {}".format(k, numbers[k]))
+    for planet, initial in planets_initial.items():
+        print("{} begins with \"{}\"".format(planet.rjust(10), initial))
 
 StringManipulation()
 WorkingWithDictionaries()
