@@ -22,6 +22,17 @@ def merge(A,B):
             j += 1
     return(C)
 
-P = list(range(0,100,2))
-Q = list(range(1,75,2))
-print(merge(P,Q))
+def mergesort(A, left, right):
+    if right - left <=1:
+        return(A[left:right])
+    if right - left > 1:
+        mid = (left+right)//2
+        L = mergesort(A, left, mid)
+        R = mergesort(A,mid,right)
+        return(merge(L,R))
+
+A = list(range(0,8000000,2))+list(range(1,8000000,2))
+#print(A)
+print(mergesort(A, 0, len(A)))
+#P = list(range(0,100,2))
+#Q = list(range(1,75,2))
